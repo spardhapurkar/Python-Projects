@@ -1,0 +1,46 @@
+import random
+print("\t\tStone Paper Sciccor Game")
+g=['Rock','Paper','Sciccor']
+
+n=int(input("\nHow many times you play: "))
+x=1
+i=0
+j=0
+k=0
+while x<=n:
+    
+    u=int(input('\nEnter 1 for Rock 2 for Paper 3 for Sciccor: '))
+    
+    c=random.choice(g)
+    
+    if ((u==1 and c=='Sciccor') or (u==2 and c=='Rock') or (u==3 and c=='Paper')):
+        
+        print("computer enter ",c)
+        print("you win")
+        i+=1
+    elif ((u==3 and c=='Rock') or (u==1 and c=='Paper') or (u==2 and c=='Sciccor')):
+        
+        print("computer enter ",c)
+        print("computer win")
+        j+=1
+    elif((u==1 and c=='Rock') or (u==2 and c=='Paper') or (u==3 and c=='Sciccor')):
+        print("computer enter ",c)
+        print("tie")
+        k+=1
+    else:
+        print('Please Enter value btween 1 to 3')
+        x-=1
+    x+=1
+print("\n\t\tResult\n")
+if i>j:
+    print(f"you won {i} times")
+    print(f"Computer won {j} times")
+    print(f"There are {k} tie matches")
+    print(f"you won the match by {i-j}")
+elif i<j:
+    print(f"you won {i} times") 
+    print(f"Computer won {j} times")
+    print(f"There are {k} tie matches")
+    print(f"Computer won the match by {j-i}")
+else:
+    print("game tie")
